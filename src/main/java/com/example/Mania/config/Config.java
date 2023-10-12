@@ -1,5 +1,6 @@
 package com.example.Mania.config;
 
+import com.example.Mania.dtos.RegistrationUserDto;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,19 +17,14 @@ import java.sql.SQLException;
 public class Config {
     @Value("${spring.datasource.url}")
     private String databaseUrl;
-
     @Value("${spring.datasource.username}")
     private String databaseUsername;
-
     @Value("${spring.datasource.password}")
     private String databasePassword;
-
     @Value("${spring.datasource.hikari.cachePrepStmts}")
     private boolean cachePrepStmts;
-
     @Value("${spring.datasource.hikari.prepStmtCacheSize}")
     private int prepStmtCacheSize;
-
     @Value("${spring.datasource.hikari.prepStmtCacheSqlLimit}")
     private int prepStmtCacheSqlLimit;
 
@@ -47,4 +43,5 @@ public class Config {
     public Connection getConnection() throws SQLException {
         return dataSource().getConnection();
     }
+
 }

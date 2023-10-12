@@ -7,4 +7,6 @@ import org.springframework.http.ResponseEntity;
 public interface AuthService {
     ResponseEntity<?> createAuthToken(JwtRequest authRequest);
     ResponseEntity<?> createNewUser(RegistrationUserDto registrationUserDto);
+    ResponseEntity<String> sendCode(RegistrationUserDto registrationUserDto);
+    ResponseEntity<?> checkCode(String codeFromUser);
 }
